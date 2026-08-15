@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CarbonGo — Học Carbon, Hành động Xanh</title>
+<meta name="description" content="CarbonGo - nền tảng giáo dục về tín chỉ carbon dành cho học sinh và cộng đồng.">
+<style>
+:root{--g:#168044;--gd:#0b542d;--gl:#dff7e8;--bg:#f5fbf6;--ink:#183527;--muted:#66786d;--card:#fff;--line:#dcebe1;--lime:#84cc16}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+a{text-decoration:none;color:inherit}.nav{position:sticky;top:0;z-index:20;background:#fffffff2;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.navin{max-width:1180px;margin:auto;padding:13px 20px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:900;font-size:25px;color:var(--gd)}.brand span{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:14px;background:var(--g);color:#fff;margin-right:8px}
+.links{display:flex;gap:7px}.links a{padding:9px 12px;border-radius:10px;font-weight:700;font-size:14px}.links a:hover{background:var(--gl);color:var(--gd)}
+.menu{display:none;border:0;background:var(--gl);font-size:22px;border-radius:10px;padding:7px 11px}
+.hero{overflow:hidden;background:radial-gradient(circle at 85% 20%,#b8f0c8 0,transparent 32%),linear-gradient(135deg,#eafff0,#f4fce7)}
+.heroIn{max-width:1180px;margin:auto;min-height:650px;padding:95px 20px;display:grid;grid-template-columns:1.1fr .9fr;gap:55px;align-items:center}
+.pill{display:inline-block;background:#fff;border:1px solid var(--line);padding:7px 13px;border-radius:999px;font-weight:800;color:var(--gd);font-size:13px;box-shadow:0 8px 25px #0b542d12}
+h1{font-size:clamp(43px,6vw,74px);line-height:1.02;letter-spacing:-2px;color:var(--gd);margin:18px 0}.hero p{font-size:18px;color:#50645a;max-width:670px}
+.btn{display:inline-block;border:0;border-radius:13px;padding:13px 19px;font-weight:800;cursor:pointer}.primary{background:var(--g);color:#fff}.secondary{background:#fff;border:1px solid var(--line);color:var(--gd)}.buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}
+.earth{width:310px;height:310px;border-radius:50%;display:grid;place-items:center;font-size:135px;margin:auto;background:linear-gradient(145deg,#c7f5d3,#24b45d);box-shadow:0 0 0 22px #ffffff80,0 0 0 50px #ffffff40,0 35px 80px #0b542d25;animation:float 4s ease-in-out infinite}@keyframes float{50%{transform:translateY(-12px)}}
+section{padding:85px 20px}.wrap{max-width:1180px;margin:auto}.heading{text-align:center;max-width:760px;margin:0 auto 42px}.eyebrow{font-weight:900;text-transform:uppercase;letter-spacing:1px;color:var(--g);font-size:13px}.heading h2{font-size:clamp(30px,4vw,46px);line-height:1.15;color:var(--gd);margin:7px 0}.heading p{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:25px;box-shadow:0 12px 30px #0b542d0c}.icon{font-size:35px}.card h3{color:var(--gd);margin:9px 0}.card p{color:var(--muted);font-size:14px}
+.flow{margin-top:25px;background:linear-gradient(135deg,#0b542d,#168044);color:white;border-radius:24px;padding:28px}.flowrow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.flowitem{text-align:center;padding:12px}.num{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#ffffff22;margin:auto auto 7px;font-weight:900}
+.alt{background:#effbf2}.quiz{max-width:860px;margin:auto;background:#fff;border:1px solid var(--line);border-radius:25px;padding:30px;box-shadow:0 12px 35px #0b542d12}.top{display:flex;justify-content:space-between;font-weight:800;color:var(--muted)}.progress{height:9px;background:#e7efe9;border-radius:99px;overflow:hidden;margin:15px 0 25px}.bar{height:100%;width:20%;background:linear-gradient(90deg,var(--g),var(--lime));transition:.3s}.question{font-size:22px;font-weight:900;color:var(--gd);margin-bottom:18px}.answer{display:block;width:100%;text-align:left;border:2px solid var(--line);background:#fbfefc;border-radius:13px;padding:13px;margin:9px 0;cursor:pointer;font-weight:700}.answer:hover{border-color:var(--g);background:var(--gl)}.correct{background:#d9f8e4!important;border-color:#22a35a!important}.wrong{background:#fee2e2!important;border-color:#ef4444!important}.quizActions{display:flex;justify-content:space-between;align-items:center;margin-top:18px}
+.chatWrap{max-width:920px;margin:auto}.chat{height:590px;background:#fff;border:1px solid var(--line);border-radius:26px;overflow:hidden;box-shadow:0 12px 35px #0b542d12;display:flex;flex-direction:column}.chatHead{background:linear-gradient(135deg,#0b542d,#168044);color:#fff;padding:17px 20px;display:flex;align-items:center;gap:11px}.avatar{width:44px;height:44px;border-radius:50%;background:#fff;color:var(--g);display:grid;place-items:center;font-size:23px}.msgs{flex:1;overflow:auto;padding:20px;background:#fbfffc}.msg{max-width:78%;padding:12px 15px;border-radius:17px;margin:9px 0;white-space:pre-wrap}.bot{background:#e7f8ec;border-bottom-left-radius:5px}.user{background:var(--g);color:#fff;margin-left:auto;border-bottom-right-radius:5px}.typing{opacity:.65;font-style:italic}.chatform{display:flex;gap:8px;padding:13px;border-top:1px solid var(--line)}.chatform input{flex:1;padding:13px;border:1px solid var(--line);border-radius:12px;outline:0}.chatform input:focus{border-color:var(--g)}
+.news{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.tag{color:var(--g);font-size:12px;font-weight:900;text-transform:uppercase}.read{color:var(--g);font-weight:900;font-size:13px}
+footer{background:#082d19;color:#d9f4e0;padding:45px 20px}.foot{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:25px}.small{font-size:13px;color:#a8c4b0}
+@media(max-width:900px){.heroIn{grid-template-columns:1fr;text-align:center}.hero p{margin:auto}.buttons{justify-content:center}.grid{grid-template-columns:1fr 1fr}.news{grid-template-columns:1fr 1fr}.flowrow{grid-template-columns:1fr}}
+@media(max-width:650px){.links{display:none;position:absolute;top:68px;left:12px;right:12px;background:#fff;padding:10px;border-radius:14px;box-shadow:0 15px 35px #0002;flex-direction:column}.links.open{display:flex}.menu{display:block}.grid,.news{grid-template-columns:1fr}.earth{width:225px;height:225px;font-size:95px}.quiz{padding:20px}.chat{height:600px}.msg{max-width:90%}.foot{flex-direction:column}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="navin"><a class="brand" href="#home"><span>🌱</span>CarbonGo</a><button class="menu" id="menu">☰</button><div class="links" id="links"><a href="#knowledge">📚 Kiến thức</a><a href="#quiz">🎮 Đố vui</a><a href="#chatbot">🤖 CarbonBot AI</a><a href="#news">📰 Cập nhật</a><a href="#impact">🌿 Hành động</a></div></div></nav>
+
+<header class="hero" id="home"><div class="heroIn"><div><span class="pill">🌍 Học hôm nay — Xanh ngày mai</span><h1>Hiểu Carbon.<br><span style="color:var(--g)">Hành động xanh.</span></h1><p>CarbonGo giúp học sinh và cộng đồng hiểu tín chỉ carbon, thị trường carbon và những việc nhỏ có thể tạo nên thay đổi lớn cho khí hậu.</p><div class="buttons"><a class="btn primary" href="#knowledge">Khám phá Carbon 🌱</a><a class="btn secondary" href="#quiz">Chơi đố vui 🎮</a></div></div><div><div class="earth">🌍</div></div></div></header>
+<div style="background:#0b542d;color:#fff;padding:13px 20px;text-align:center;font-size:14px">
+🇻🇳 <strong>Cập nhật 2026:</strong> Việt Nam đã khai trương sàn giao dịch carbon trong nước ngày 29/06/2026.
+<a href="https://dcc.mae.gov.vn/tin-hoat-dong/viet-nam-khai-truong-san-giao-dich-carbon-trong-nuoc-3915.htm?mn=1" target="_blank" rel="noopener" style="text-decoration:underline;margin-left:6px">Xem nguồn chính thức →</a>
+</div>
+
+
+<section id="knowledge"><div class="wrap"><div class="heading"><div class="eyebrow">Carbon 101</div><h2>Tín chỉ Carbon là gì?</h2><p>Những khái niệm cơ bản được giải thích bằng ngôn ngữ dễ hiểu.</p></div><div class="grid">
+<article class="card"><div class="icon">🌎</div><h3>Khái niệm</h3><p>Tín chỉ carbon thường đại diện cho 1 tấn CO₂ tương đương (tCO₂e) được giảm, tránh hoặc loại bỏ theo một cơ chế/tiêu chuẩn cụ thể.</p></article>
+<article class="card"><div class="icon">🌳</div><h3>Tạo tín chỉ</h3><p>Dự án năng lượng tái tạo, rừng, hiệu quả năng lượng, chất thải... có thể tạo ra lượng giảm phát thải được đo lường và xác minh.</p></article>
+<article class="card"><div class="icon">📏</div><h3>MRV</h3><p>MRV là đo đạc, báo cáo và thẩm tra. Đây là phần quan trọng để xác định lượng giảm phát thải của dự án.</p></article>
+<article class="card"><div class="icon">💰</div><h3>Mua bán</h3><p>Tín chỉ có thể được giao dịch trên các cơ chế phù hợp. Giá và điều kiện phụ thuộc chất lượng, tiêu chuẩn, nguồn cung và quy định.</p></article>
+<article class="card"><div class="icon">🏭</div><h3>ETS</h3><p>Hệ thống trao đổi hạn ngạch phát thải (ETS) là một cơ chế thị trường trong đó các đơn vị thuộc phạm vi quản lý có thể giao dịch hạn ngạch theo quy định.</p></article>
+<article class="card"><div class="icon">🌱</div><h3>Hành động xanh</h3><p>Tiết kiệm điện, đi lại xanh, giảm lãng phí, tái sử dụng và lan tỏa kiến thức là những bước đơn giản để giảm dấu chân carbon.</p></article>
+</div><div class="flow"><h3 style="text-align:center;margin-top:0">🔄 Hành trình một tín chỉ Carbon</h3><div class="flowrow"><div class="flowitem"><div class="num">1</div>Dự án</div><div class="flowitem"><div class="num">2</div>Giảm phát thải</div><div class="flowitem"><div class="num">3</div>Đo lường</div><div class="flowitem"><div class="num">4</div>Thẩm tra</div><div class="flowitem"><div class="num">5</div>Giao dịch</div></div></div></div></section>
+
+<section id="quiz" class="alt"><div class="wrap"><div class="heading"><div class="eyebrow">Carbon Challenge</div><h2>🎮 Đố vui CarbonGo</h2><p>10 câu hỏi trong ngân hàng; mỗi lượt chọn ngẫu nhiên 5 câu.</p></div><div class="quiz" id="quizBox"><div class="top"><span id="qnum">Câu 1 / 5</span><span id="scoreText">Điểm: 0</span></div><div class="progress"><div class="bar" id="bar"></div></div><div class="question" id="question"></div><div id="answers"></div><div class="quizActions"><span id="feedback"></span><button class="btn primary" id="next" style="display:none">Câu tiếp theo →</button></div><div id="result" style="display:none;text-align:center"><div style="font-size:45px">🎉</div><h2>Hoàn thành!</h2><div id="finalScore" style="font-size:50px;font-weight:900;color:var(--g)"></div><p id="resultMessage"></p><button class="btn primary" id="restart">🔄 Chơi lại</button></div></div></div></section>
+
+<section id="chatbot"><div class="wrap"><div class="heading"><div class="eyebrow">AI Assistant</div><h2>🤖 CarbonBot AI</h2><p>Đặt câu hỏi. CarbonBot dùng OpenAI ở phía server để trả lời theo kiến thức giáo dục CarbonGo.</p></div><div class="chatWrap"><div class="chat"><div class="chatHead"><div class="avatar">🌱</div><div><strong>CarbonBot</strong><div style="font-size:12px;opacity:.8">Trợ lý giáo dục về Carbon</div></div></div><div class="msgs" id="msgs"></div><form class="chatform" id="chatForm"><input id="chatInput" autocomplete="off" placeholder="Ví dụ: 1 tín chỉ carbon là bao nhiêu CO₂?"><button class="btn primary" id="send">Gửi</button></form></div><p class="small" style="margin-top:10px">⚠️ Thông tin về giá, pháp luật và chính sách có thể thay đổi; hãy kiểm tra nguồn chính thức trước khi sử dụng cho quyết định thực tế.</p></div></div></section>
+
+<section id="news" class="alt"><div class="wrap"><div class="heading"><div class="eyebrow">Carbon News</div><h2>📰 Cập nhật thông tin</h2><p>Các nguồn để học sinh và cộng đồng theo dõi thị trường carbon.</p></div><div class="news">
+<article class="card"><div class="tag">🇻🇳 Cơ quan nhà nước</div><h3>Cục Biến đổi khí hậu</h3><p>Thông tin chính thức về thị trường carbon trong nước.</p><a class="read" target="_blank" rel="noopener" href="https://dcc.mae.gov.vn/chuyen-muc/109/thi-truong-cacbon-trong-nuoc.htm">Xem nguồn →</a></article>
+<article class="card"><div class="tag">🇻🇳 Việt Nam</div><h3>VnExpress</h3><p>Tổng hợp tin, bài về tín chỉ carbon và thị trường carbon.</p><a class="read" target="_blank" rel="noopener" href="https://vnexpress.net/topic/thong-tin-ve-tin-chi-carbon-27705">Đọc tin →</a></article>
+<article class="card"><div class="tag">🌍 Quốc tế</div><h3>World Bank</h3><p>Carbon Pricing Dashboard và dữ liệu về định giá carbon toàn cầu.</p><a class="read" target="_blank" rel="noopener" href="https://carbonpricingdashboard.worldbank.org/">Xem dữ liệu →</a></article>
+<article class="card"><div class="tag">🌍 Quốc tế</div><h3>World Bank — 2026</h3><p>Báo cáo State and Trends of Carbon Pricing 2026.</p><a class="read" target="_blank" rel="noopener" href="https://www.worldbank.org/en/publication/state-and-trends-of-carbon-pricing">Đọc báo cáo →</a></article>
+</div></div></section>
+
+
+<section id="impact">
+<div class="wrap">
+<div class="heading"><div class="eyebrow">Green Mission</div><h2>🌿 Biến kiến thức thành hành động</h2><p>Không chỉ học về carbon — hãy ghi lại những việc xanh bạn đã làm.</p></div>
+<div class="grid">
+<article class="card">
+<div class="icon">⚡</div><h3>Tiết kiệm điện</h3>
+<p>Tắt thiết bị khi không sử dụng, tận dụng ánh sáng tự nhiên.</p>
+<button class="btn primary mission" data-points="5">+5 điểm xanh</button>
+</article>
+<article class="card">
+<div class="icon">🚲</div><h3>Đi lại xanh</h3>
+<p>Đi bộ, xe đạp hoặc phương tiện công cộng khi phù hợp.</p>
+<button class="btn primary mission" data-points="10">+10 điểm xanh</button>
+</article>
+<article class="card">
+<div class="icon">♻️</div><h3>Giảm rác</h3>
+<p>Tái sử dụng, phân loại và hạn chế sản phẩm dùng một lần.</p>
+<button class="btn primary mission" data-points="8">+8 điểm xanh</button>
+</article>
+</div>
+<div class="card" style="margin-top:20px;text-align:center">
+<div class="eyebrow">GREEN SCORE</div>
+<div id="greenScore" style="font-size:52px;font-weight:900;color:var(--g)">0</div>
+<p id="greenMessage">Bắt đầu một hành động xanh!</p>
+</div>
+</div>
+</section>
+
+<section class="alt" id="learn">
+<div class="wrap">
+<div class="heading"><div class="eyebrow">Quick Guide</div><h2>🧠 60 giây hiểu Carbon</h2></div>
+<div class="grid">
+<div class="card"><h3>1. Phát thải</h3><p>Hoạt động của con người tạo ra khí nhà kính, trong đó CO₂ là một loại quan trọng.</p></div>
+<div class="card"><h3>2. Giảm phát thải</h3><p>Ưu tiên tránh và giảm phát thải tại nguồn trước khi xem xét các biện pháp bù trừ.</p></div>
+<div class="card"><h3>3. Tín chỉ</h3><p>Một tín chỉ có thể đại diện cho một lượng giảm/loại bỏ phát thải được xác định theo chương trình cụ thể.</p></div>
+</div>
+</div>
+</section>
+
+<footer><div class="foot"><div><strong style="font-size:25px;color:#fff">🌱 CarbonGo</strong><div class="small">Học về Carbon. Hành động vì Trái Đất.</div></div><div class="small">Website giáo dục cộng đồng • CarbonGo © 2026</div></div></footer>
+
+<script>
+const bank=[
+["Một tín chỉ carbon thường đại diện cho bao nhiêu?",["1 kg CO₂","10 kg CO₂","1 tấn CO₂ tương đương","100 tấn CO₂"],2],
+["MRV trong dự án carbon là gì?",["Đo đạc, báo cáo và thẩm tra","Mua, rao, vay","Một loại cây","Một loại nhiên liệu"],0],
+["Hoạt động nào có thể góp phần tạo tín chỉ?",["Phá rừng","Đốt thêm than","Trồng và bảo vệ rừng","Tăng lãng phí điện"],2],
+["ETS là viết tắt của gì?",["Emissions Trading System","Energy Tree System","Environmental Tax Service","Earth Technology System"],0],
+["CO₂e nghĩa là gì?",["Carbon điện","CO₂ tương đương","Oxy tương đương","Carbon năng lượng"],1],
+["Thị trường carbon hướng tới điều gì?",["Khuyến khích giảm phát thải","Tăng phát thải","Tăng lãng phí","Loại bỏ năng lượng sạch"],0],
+["Học sinh có thể làm gì?",["Lãng phí điện","Tiết kiệm điện và đi lại xanh","Đốt rác","Dùng đồ một lần nhiều hơn"],1],
+["Nguồn năng lượng nào là năng lượng tái tạo?",["Than đá","Dầu mỏ","Điện mặt trời","Xăng"],2],
+["Một bước quan trọng để xác định giảm phát thải là gì?",["Đo lường và thẩm tra","Tự đặt con số","Không cần dữ liệu","Chỉ chụp ảnh"],0],
+["Net Zero nói đơn giản là gì?",["Không có bất kỳ phát thải nào","Cân bằng phát thải còn lại với lượng loại bỏ tương ứng","Tăng phát thải","Chỉ trồng cây"],1]
+];
+let quiz=[],qi=0,score=0,answered=false;
+const shuffle=a=>[...a].sort(()=>Math.random()-.5);
+function startQuiz(){quiz=shuffle(bank).slice(0,5);qi=0;score=0;document.getElementById("result").style.display="none";document.getElementById("question").style.display="block";document.getElementById("answers").style.display="block";showQ()}
+function showQ(){answered=false;let q=quiz[qi];qnum.textContent=`Câu ${qi+1} / 5`;bar.style.width=((qi+1)*20)+"%";question.textContent=q[0];feedback.textContent="";next.style.display="none";answers.innerHTML="";q[1].forEach((a,n)=>{let b=document.createElement("button");b.className="answer";b.textContent=`${String.fromCharCode(65+n)}. ${a}`;b.onclick=()=>choose(n,b);answers.appendChild(b)})}
+function choose(n,b){if(answered)return;answered=true;let q=quiz[qi],bs=[...document.querySelectorAll(".answer")];bs.forEach(x=>x.disabled=true);if(n===q[2]){score++;b.classList.add("correct");feedback.textContent="✅ Chính xác!"}else{b.classList.add("wrong");bs[q[2]].classList.add("correct");feedback.textContent="💡 Chưa đúng."}scoreText.textContent=`Điểm: ${score}`;next.style.display="inline-block"}
+next.onclick=()=>{qi++;qi<5?showQ():finish()};restart.onclick=startQuiz;
+function finish(){question.style.display="none";answers.style.display="none";next.style.display="none";result.style.display="block";finalScore.textContent=`${score}/5`;resultMessage.textContent=score===5?"🌟 Tuyệt vời! Bạn là Carbon Master!":score>=3?"🌱 Rất tốt! Hãy tiếp tục khám phá.":"💚 Đọc lại phần Kiến thức và thử lại nhé!"}
+startQuiz();
+
+menu.onclick=()=>links.classList.toggle("open");
+
+const chatHistory=[];
+function addMsg(text,role,typing=false){let d=document.createElement("div");d.className=`msg ${role}${typing?" typing":""}`;d.textContent=text;msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;return d}
+addMsg("Xin chào! 👋 Mình là CarbonBot. Hãy hỏi mình về tín chỉ carbon, CO₂e, MRV, ETS, Net Zero hoặc thị trường carbon nhé.","bot");
+
+chatForm.addEventListener("submit",async e=>{
+ e.preventDefault();const text=chatInput.value.trim();if(!text)return;
+ addMsg(text,"user");chatHistory.push({role:"user",content:text});chatInput.value="";send.disabled=true;send.textContent="Đang trả lời...";
+ const typing=addMsg("CarbonBot đang suy nghĩ…","bot",true);
+ try{
+   const r=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({messages:chatHistory})});
+   const data=await r.json();typing.remove();
+   if(!r.ok)throw new Error(data.error||"API error");
+   addMsg(data.reply,"bot");chatHistory.push({role:"assistant",content:data.reply});
+ }catch(err){typing.remove();addMsg("⚠️ Không kết nối được với CarbonBot. Hãy kiểm tra server và API key.","bot");console.error(err)}
+ finally{send.disabled=false;send.textContent="Gửi";chatInput.focus()}
+});
+
+let greenScore=Number(localStorage.getItem("carbonGoGreenScore")||0);
+function updateGreen(){
+  document.getElementById("greenScore").textContent=greenScore;
+  const m=document.getElementById("greenMessage");
+  m.textContent=greenScore>=50?"🌟 Green Hero! Bạn đang lan tỏa lối sống xanh.":greenScore>=20?"🌱 Rất tốt! Hãy tiếp tục.":"💚 Mỗi hành động nhỏ đều có ý nghĩa.";
+}
+document.querySelectorAll(".mission").forEach(btn=>{
+ btn.addEventListener("click",()=>{
+   greenScore+=Number(btn.dataset.points);
+   localStorage.setItem("carbonGoGreenScore",greenScore);
+   updateGreen();
+   btn.textContent="✅ Đã ghi nhận";
+   btn.disabled=true;
+ });
+});
+updateGreen();
+
+</script>
+</body>
+</html>
